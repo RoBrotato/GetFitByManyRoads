@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Fit by Many Roads | Community Fitness in Rockville, MD</title>
+<meta name="description" content="Small-group fitness classes and personal training for adults and teens in Rockville, MD. No contract, no initiation fee, cancel anytime. Your path to health starts here.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#20301f;
+    --paper:#f4efdf;
+    --paper-2:#ece3ca;
+    --pine:#2c4234;
+    --pine-dark:#1c2e22;
+    --moss:#7a9467;
+    --gold:#c1872a;
+    --gold-dark:#9c6d1f;
+    --brick:#ad5a3d;
+    --line: rgba(32,48,31,0.14);
+    --max: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Public Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.08;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-dark);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--gold-dark);
+  }
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(244,239,223,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 28px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink);}
+  .brand-mark{
+    width:38px; height:38px; border-radius:50%;
+    background:var(--pine); color:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; font-weight:700; font-size:17px;
+    flex-shrink:0;
+  }
+  .brand-name{font-family:'Fraunces',serif; font-weight:600; font-size:18px; letter-spacing:-0.01em;}
+  .brand-name span{display:block; font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--moss); margin-top:1px;}
+  nav.links{display:flex; gap:28px; align-items:center;}
+  nav.links a{
+    text-decoration:none; font-size:14.5px; font-weight:500; color:var(--ink);
+    position:relative; padding:4px 0;
+  }
+  nav.links a::after{
+    content:""; position:absolute; left:0; bottom:0; width:0; height:2px;
+    background:var(--gold); transition:width .2s ease;
+  }
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--gold); color:var(--pine-dark); padding:10px 18px;
+    border-radius:999px; font-weight:600; font-size:14px; text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--gold-dark); color:var(--paper);}
+  .burger{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+  .burger svg{width:26px; height:26px; color:var(--ink);}
+  #nav-toggle{display:none;}
+
+  @media (max-width:900px){
+    nav.links{
+      position:fixed; inset:66px 0 0 0; background:var(--paper);
+      flex-direction:column; align-items:flex-start; padding:24px 28px;
+      gap:0; transform:translateX(100%); transition:transform .25s ease;
+      overflow-y:auto;
+    }
+    nav.links a{width:100%; padding:14px 0; border-bottom:1px solid var(--line); font-size:17px;}
+    #nav-toggle:checked ~ .links{transform:translateX(0);}
+    .burger{display:block;}
+    .nav-cta{margin-top:16px;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; background:var(--pine); color:var(--paper);
+    overflow:hidden; padding:96px 0 0;
+  }
+  .hero .wrap{position:relative; z-index:2; padding-bottom:64px;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;}
+  .hero .eyebrow{color:var(--gold);}
+  .hero .eyebrow::before{background:var(--gold);}
+  .hero h1{font-size:clamp(2.4rem, 5vw, 4rem); color:var(--paper); margin:18px 0 22px;}
+  .hero h1 em{font-style:italic; color:var(--gold); font-weight:500;}
+  .hero p.lede{font-size:18px; max-width:46ch; color:#e3e3d3; margin-bottom:34px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; border-radius:999px; font-weight:600; font-size:15px;
+    text-decoration:none; border:1px solid transparent; cursor:pointer;
+    font-family:'Public Sans',sans-serif;
+  }
+  .btn-primary{background:var(--gold); color:var(--pine-dark);}
+  .btn-primary:hover{background:#d99a3a;}
+  .btn-ghost{border-color:rgba(244,239,223,0.4); color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--paper); background:rgba(244,239,223,0.08);}
+  .hero-stats{display:flex; gap:28px; margin-top:44px; flex-wrap:wrap;}
+  .hero-stat b{display:block; font-family:'Fraunces',serif; font-size:26px; color:var(--gold);}
+  .hero-stat span{font-size:12.5px; color:#c9c9b6; font-family:'IBM Plex Mono',monospace; letter-spacing:0.04em;}
+
+  .hero-photo{
+    position:relative; border-radius:18px; overflow:hidden;
+    aspect-ratio:4/5; box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+  .hero-photo img{width:100%; height:100%; object-fit:cover;}
+  .hero-photo-badge{
+    position:absolute; bottom:16px; left:16px; right:16px;
+    background:rgba(28,46,34,0.82); backdrop-filter:blur(4px);
+    color:var(--paper); padding:12px 16px; border-radius:12px;
+    font-size:13px; display:flex; align-items:center; gap:10px;
+  }
+  .stars{color:var(--gold); letter-spacing:2px; font-size:13px;}
+
+  /* winding road divider */
+  .road{display:block; width:100%; height:64px;}
+  .road path{fill:none; stroke:var(--paper); stroke-width:3; stroke-dasharray:1 14; stroke-linecap:round;}
+  .road-solid path{stroke-dasharray:none; stroke-width:5;}
+
+  /* ---------- MILE MARKER SECTION HEADER ---------- */
+  .mile{
+    display:flex; align-items:center; gap:16px; margin-bottom:14px;
+  }
+  .mile-num{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:0.1em;
+    background:var(--pine); color:var(--gold); padding:6px 12px; border-radius:999px;
+    flex-shrink:0;
+  }
+  .mile-line{flex:1; height:1px; background:var(--line);}
+
+  section{padding:88px 0;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem); margin-top:14px;}
+  .section-head p{margin-top:16px; font-size:16.5px; color:#454f38; max-width:56ch;}
+
+  /* ---------- STORY ---------- */
+  .story{background:var(--paper);}
+  .story-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;}
+  .story-photo{position:sticky; top:110px;}
+  .story-photo img{border-radius:16px; aspect-ratio:3/4; object-fit:cover; box-shadow:0 24px 48px -24px rgba(32,48,31,0.35);}
+  .story-photo figcaption{margin-top:14px; font-size:13.5px; color:#5a6350;}
+  .story-photo figcaption b{color:var(--ink); font-family:'Fraunces',serif; font-style:italic; font-weight:500;}
+  .story-body p{margin:0 0 20px; color:#333d29; font-size:16px;}
+  .story-body p:first-of-type{
+    font-family:'Fraunces',serif; font-size:20px; font-style:italic; color:var(--pine);
+    border-left:3px solid var(--gold); padding-left:20px;
+  }
+  .story-sign{font-family:'Fraunces',serif; font-style:italic; font-size:19px; margin-top:24px;}
+  details.more{margin-top:8px;}
+  details.more summary{
+    cursor:pointer; color:var(--gold-dark); font-weight:600; font-size:14.5px;
+    list-style:none; display:inline-flex; align-items:center; gap:6px;
+  }
+  details.more summary::-webkit-details-marker{display:none;}
+  details.more summary::after{content:"↓ Read Helena's full story"; }
+  details[open].more summary::after{content:"↑ Show less";}
+
+  /* ---------- TRAINERS ---------- */
+  .trainers{background:var(--pine-dark); color:var(--paper);}
+  .trainers .section-head p{color:#c9d0c0;}
+  .trainers .eyebrow{color:var(--gold);}
+  .trainers .eyebrow::before{background:var(--gold);}
+  .trainer-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  .t-card{
+    background:rgba(244,239,223,0.05); border:1px solid rgba(244,239,223,0.14);
+    border-radius:16px; overflow:hidden; display:flex; flex-direction:column;
+  }
+  .t-photo{aspect-ratio:1/1; overflow:hidden; background:var(--pine);}
+  .t-photo img{width:100%; height:100%; object-fit:cover;}
+  .t-info{padding:20px;}
+  .t-info h3{font-size:19px; color:var(--paper);}
+  .t-role{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--gold); text-transform:uppercase; letter-spacing:0.06em; margin:8px 0 12px;}
+  .t-bio{font-size:14px; color:#c9d0c0; line-height:1.55;}
+
+  /* ---------- SCHEDULE ---------- */
+  .schedule{background:var(--paper);}
+  .free-banner{
+    background:var(--gold); color:var(--pine-dark); border-radius:16px;
+    padding:22px 28px; display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:16px; margin-bottom:48px;
+  }
+  .free-banner b{font-family:'Fraunces',serif; font-size:19px; display:block;}
+  .free-banner span{font-size:14px;}
+  .sched-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .sched-card{
+    background:#fff; border:1px solid var(--line); border-radius:16px; padding:26px;
+  }
+  .sched-card .days{font-family:'Fraunces',serif; font-weight:600; font-size:19px; color:var(--pine);}
+  .sched-card .focus{font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--gold-dark); margin:6px 0 16px;}
+  .sched-card .times{display:flex; flex-wrap:wrap; gap:8px;}
+  .time-pill{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; background:var(--paper-2);
+    padding:6px 10px; border-radius:8px; color:var(--ink);
+  }
+  .flex-note{
+    margin-top:36px; display:flex; gap:16px; align-items:flex-start;
+    padding:20px 24px; background:var(--paper-2); border-radius:14px;
+  }
+  .flex-note svg{flex-shrink:0; width:26px; height:26px; color:var(--pine); margin-top:2px;}
+  .flex-note b{display:block; font-family:'Fraunces',serif; font-size:16.5px; margin-bottom:4px;}
+  .flex-note p{margin:0; font-size:14.5px; color:#454f38;}
+
+  /* ---------- PRICING ---------- */
+  .pricing{background:var(--pine); color:var(--paper);}
+  .pricing .eyebrow{color:var(--gold);} .pricing .eyebrow::before{background:var(--gold);}
+  .pricing .section-head p{color:#dfe3d3;}
+  .price-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .p-card{
+    background:rgba(244,239,223,0.06); border:1px solid rgba(244,239,223,0.16);
+    border-radius:18px; padding:32px 28px; display:flex; flex-direction:column;
+  }
+  .p-card.featured{background:var(--gold); color:var(--pine-dark); border-color:transparent;}
+  .p-tag{font-family:'IBM Plex Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em; opacity:0.75;}
+  .p-price{font-family:'Fraunces',serif; font-size:44px; margin:14px 0 2px;}
+  .p-price sup{font-size:16px; font-weight:500;}
+  .p-price small{font-size:14px; font-weight:400; opacity:0.7;}
+  .p-desc{font-size:14.5px; opacity:0.85; margin-bottom:24px; flex:1;}
+  .p-card .btn{margin-top:auto; justify-content:center;}
+  .terms-strip{
+    margin-top:40px; font-size:13px; color:#c9d0c0; display:flex; gap:28px; flex-wrap:wrap;
+  }
+  .terms-strip span{display:flex; align-items:center; gap:7px;}
+  .terms-strip svg{width:15px; height:15px; color:var(--gold);}
+  .rights{margin-top:20px;}
+  .rights summary{cursor:pointer; color:var(--gold); font-size:13.5px; font-weight:600;}
+  .rights ol{font-size:13.5px; color:#c9d0c0; line-height:1.7; padding-left:20px; margin-top:14px;}
+
+  /* ---------- REVIEWS ---------- */
+  .reviews{background:var(--paper);}
+  .review-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  .review-card{background:#fff; border:1px solid var(--line); border-radius:16px; padding:28px;}
+  .review-card .stars{margin-bottom:14px;}
+  .review-card p{font-family:'Fraunces',serif; font-style:italic; font-size:19px; color:var(--pine); margin:0;}
+  .review-card footer{margin-top:16px; font-size:13.5px; color:#5a6350; font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--pine-dark); color:var(--paper);}
+  .contact .eyebrow{color:var(--gold);} .contact .eyebrow::before{background:var(--gold);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+  .contact-list{list-style:none; margin:28px 0 0; padding:0; display:flex; flex-direction:column; gap:20px;}
+  .contact-list li{display:flex; gap:16px; align-items:flex-start;}
+  .contact-list svg{width:22px; height:22px; color:var(--gold); flex-shrink:0; margin-top:2px;}
+  .contact-list a{text-decoration:none; font-weight:600;}
+  .contact-list .label{display:block; font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.07em; color:#9aa68e; margin-bottom:3px;}
+  .contact-photo img{border-radius:16px; aspect-ratio:4/3; object-fit:cover;}
+  .contact-photo p{font-size:13.5px; color:#9aa68e; margin-top:10px;}
+
+  footer.site{background:var(--pine-dark); color:#9aa68e; padding:32px 0; border-top:1px solid rgba(244,239,223,0.1);}
+  .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:13.5px;}
+  .foot-row a{color:#c9d0c0; text-decoration:none;}
+
+  @media (max-width:980px){
+    .hero-grid, .story-grid, .contact-grid{grid-template-columns:1fr;}
+    .story-photo{position:static; max-width:340px;}
+    .trainer-grid{grid-template-columns:repeat(2,1fr);}
+    .sched-grid, .price-grid, .review-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+  }
+  @media (max-width:520px){
+    .trainer-grid{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+    .free-banner{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <span class="brand-mark">GF</span>
+      <span class="brand-name">Get Fit by Many Roads
+        <span>Rockville, MD</span>
+      </span>
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <nav class="links">
+      <a href="#story">Our Story</a>
+      <a href="#trainers">Trainers</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="tel:2402937304">Text for a Free Class</a>
+    </nav>
+    <label for="nav-toggle" class="burger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </label>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:0;">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Small-Group Fitness &middot; Rockville, MD</p>
+          <h1>There's more than<br>one road to <em>your</em><br>healthiest self.</h1>
+          <p class="lede">Small-group fitness training and personal coaching for adults and teens &mdash; built by a neighbor who believes a good community is half the workout. No contracts. No initiation fee. Cancel or pause anytime.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:2402937304">Text 240-293-7304 for a Free Week</a>
+            <a class="btn btn-ghost" href="#schedule">See the Schedule</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><b>5.0★</b><span>Google Rating</span></div>
+            <div class="hero-stat"><b>7</b><span>Classes / Week</span></div>
+            <div class="hero-stat"><b>No</b><span>Contract Required</span></div>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="https://images.squarespace-cdn.com/content/v1/6977cff1fb5809769ff14dd8/11d4fb36-9e88-4365-abd1-1a76dc91726d/outside+name.jpeg" alt="Get Fit by Many Roads storefront sign in Rockville, Maryland">
+          <div class="hero-photo-badge">
+            <span class="stars">★★★★★</span>
+            <span>"Great place and great energy" &mdash; Google review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg class="road" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,32 C300,80 900,-16 1200,32"/>
+    </svg>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="wrap">
+      <div class="mile"><span class="mile-num">MILE 01</span><span class="mile-line"></span></div>
+      <div class="section-head">
+        <p class="eyebrow">Our Story &amp; Vision</p>
+        <h2>Why a research scientist opened a gym in a strip mall.</h2>
+      </div>
+      <div class="story-grid">
+        <figure class="story-photo">
+          <img src="https://images.squarespace-cdn.com/content/v1/6977cff1fb5809769ff14dd8/d2636118-e2a1-4a3a-88dd-e127596c5841/Helena+jpeg.jpeg" alt="Helena Chang, founder of Get Fit by Many Roads">
+          <figcaption><b>Helena Chang</b> &mdash; Founder, Many Roads Community, LLC</figcaption>
+        </figure>
+        <div class="story-body">
+          <p>"Our path to good physical and mental health has many roads. Along those roads, the journey is worth taking if we have good friends to share a laugh."</p>
+          <p>Hi everyone &mdash; this is Helena, the owner of Get Fit by Many Roads. I opened a fitness and wellness studio that welcomes everyone, and I wanted to share why.</p>
+          <p>When I was 12, I came to the U.S. from Formosa (the island now called Taiwan) without knowing the alphabet. My father had been a minister; coming here meant he and my mom took low-wage jobs and never really learned English. I remember counting the burn marks on my dad's arms from his work as a hotel baker.</p>
+          <details class="more">
+            <summary></summary>
+            <p>Learning a new language and culture wasn't easy, but teachers took me under their wing, and with my parents' support I finished college and graduate school. After 30 years in research labs, I wanted to do something more meaningful &mdash; while still keeping my job.</p>
+            <p>I've raised two teenagers and watched too many of their friends struggle with mental health, reaching for vaping, drugs, and video games as an escape. I wanted to offer an alternative. After 18 years working out in nearly every gym in the Rockville area, I took the leap &mdash; my first business ever &mdash; to open a space with the hope of helping teens and kids find a way out of self-destructive habits.</p>
+            <p>Before I was five, back in Taiwan, cysts grew on my neck and doctors couldn't explain why. Two years of surgeries and bitter Chinese herbal medicine followed, spent mostly recovering on a lawn chair. What finally helped? A teacher put me on the local swim team, with daily calisthenics and swim practice. I saw firsthand how movement, paired with a community of like-minded peers, can heal.</p>
+            <p>Our classes are for adults and teens, and we host community events &mdash; outdoor walks, hikes, swimming, lunch get-togethers, dancing. By building a community of active, compassionate adults, we give teens and kids a safe place to stay physically active, build friendships, and stay on a path toward better physical, mental, and spiritual well-being. Down the road, I hope to offer homework help, after-school snacks, and a path for teens to become certified coaches themselves.</p>
+          </details>
+          <p class="story-sign">&mdash; Helena Chang, Many Roads Community, LLC</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINERS -->
+  <section class="trainers" id="trainers">
+    <div class="wrap">
+      <div class="mile"><span class="mile-num">MILE 02</span><span class="mile-line" style="background:rgba(244,239,223,0.16);"></span></div>
+      <div class="section-head">
+        <p class="eyebrow">Our Trainers</p>
+        <h2>Certified coaches who meet you where you're starting from.</h2>
+        <p>Four trainers, four backgrounds &mdash; volleyball, boxing, physical therapy, and dance &mdash; all working from the same idea: fitness should be fun enough that you keep coming back.</p>
+      </div>
+      <div class="trainer-grid">
+        <div class="t-card">
+          <div class="t-photo"><img src="https://images.squarespace-cdn.com/content/v1/6977cff1fb5809769ff14dd8/b6cb97f7-0972-4d57-9b27-88783740b573/Tim+headshot.jpg" alt="Tim Sargent, certified personal trainer"></div>
+          <div class="t-info">
+            <h3>Tim Sargent</h3>
+            <div class="t-role">NASM Certified Personal Trainer</div>
+            <p class="t-bio">A former MCPS volleyball champion who loves incorporating laughter into every workout. Tim wants to help you reach new heights, no matter where you're starting from.</p>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-photo"><img src="https://images.squarespace-cdn.com/content/v1/6977cff1fb5809769ff14dd8/a865bc27-c011-44b8-9fe2-a2be0546e657/Zane.jpeg" alt="Zane Carr, certified group fitness instructor"></div>
+          <div class="t-info">
+            <h3>Zane Carr</h3>
+            <div class="t-role">ACE Certified Group Fitness Instructor</div>
+            <p class="t-bio">A group trainer with a background in boxing and strength training. Zane's goal: help you get stronger, move better, and actually enjoy the process.</p>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-photo"><img src="https://images.squarespace-cdn.com/content/v1/6977cff1fb5809769ff14dd8/1aab6715-ce58-4bd4-862d-359d6dd49ad1/Nicole.jpeg" alt="Nicole Toledo, Pilates instructor"></div>
+          <div class="t-info">
+            <h3>Nicole Toledo</h3>
+            <div class="t-role">Pilates Instructor &middot; PT, 13+ yrs</div>
+            <p class="t-bio">A physical therapist of over 13 years, Nicole blends clinical expertise with mindful, core-focused training to build long-term strength, balance, and posture.</p>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-photo"><img src="https://images.squarespace-cdn.com/content/v1/6977cff1fb5809769ff14dd8/7ece024f-d318-4e11-9f11-cfa57fdf3bee/Kevin.jpeg" alt="Kevin Frederick, physical therapist and former dance instructor"></div>
+          <div class="t-info">
+            <h3>Kevin Frederick</h3>
+            <div class="t-role">Physical Therapist (Germany) &middot; Former Dance Instructor</div>
+            <p class="t-bio">Currently studying for his ACE personal trainer certification, Kevin brings a dancer's precision and a therapist's eye for movement to every session.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="schedule" id="schedule">
+    <div class="wrap">
+      <div class="mile"><span class="mile-num">MILE 03</span><span class="mile-line"></span></div>
+      <div class="section-head">
+        <p class="eyebrow">Class Format &amp; Schedule</p>
+        <h2>Small groups, all levels, seven days a week.</h2>
+        <p>All classes are small-group and open to every fitness level &mdash; adults and teens alike.</p>
+      </div>
+
+      <div class="free-banner">
+        <div><b>New here? Try us for free.</b><span>Text Helena at 240-293-7304 for a free weekly pass.</span></div>
+        <a class="btn" style="background:var(--pine-dark); color:var(--paper);" href="sms:2402937304">Text Now</a>
+      </div>
+
+      <div class="sched-grid">
+        <div class="sched-card">
+          <div class="days">Mon &middot; Wed &middot; Fri</div>
+          <div class="focus">Total Body Workout</div>
+          <div class="times">
+            <span class="time-pill">7:00a</span><span class="time-pill">8:00a</span><span class="time-pill">9:00a</span>
+            <span class="time-pill">5:30p</span><span class="time-pill">6:30p</span>
+          </div>
+        </div>
+        <div class="sched-card">
+          <div class="days">Tue &middot; Thu</div>
+          <div class="focus">Cardio &amp; Core Conditioning</div>
+          <div class="times">
+            <span class="time-pill">7:00a</span><span class="time-pill">8:00a</span><span class="time-pill">9:00a</span>
+            <span class="time-pill">5:30p</span><span class="time-pill">6:30p</span>
+          </div>
+        </div>
+        <div class="sched-card">
+          <div class="days">Saturday</div>
+          <div class="focus">Cardio &amp; Core</div>
+          <div class="times">
+            <span class="time-pill">8:00a</span><span class="time-pill">9:00a</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div>
+          <b>Built for busy schedules.</b>
+          <p>Every class has natural stopping points at the 30-minute and 45-minute marks &mdash; so if you're a parent squeezing in a workout between drop-offs, you choose when to stop and go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="wrap">
+      <div class="mile"><span class="mile-num">MILE 04</span><span class="mile-line" style="background:rgba(244,239,223,0.16);"></span></div>
+      <div class="section-head">
+        <p class="eyebrow">Location &amp; Pricing</p>
+        <h2>Pay per week or month. No contract, ever.</h2>
+        <p>No initiation fee, no long-term contract. Cancel or freeze your payment anytime.</p>
+      </div>
+      <div class="price-grid">
+        <div class="p-card">
+          <div class="p-tag">Weekly</div>
+          <div class="p-price">$40<small>/wk</small></div>
+          <p class="p-desc">Unlimited small-group fitness classes, billed every 7 days.</p>
+          <a class="btn btn-ghost" href="tel:2402937304">Get Started</a>
+        </div>
+        <div class="p-card featured">
+          <div class="p-tag">Monthly &middot; Best Value</div>
+          <div class="p-price">$150<small>/mo</small></div>
+          <p class="p-desc">Unlimited small-group fitness classes, billed every 30 days.</p>
+          <a class="btn" style="background:var(--pine-dark); color:var(--paper);" href="tel:2402937304">Get Started</a>
+        </div>
+        <div class="p-card">
+          <div class="p-tag">Personal Training</div>
+          <div class="p-price">$100<small>/hr</small></div>
+          <p class="p-desc">One-on-one coaching, tailored to your goals and schedule.</p>
+          <a class="btn btn-ghost" href="tel:2402937304">Get Started</a>
+        </div>
+      </div>
+
+      <div class="terms-strip">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> No initiation fee</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> No contract</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Cancel or freeze anytime</span>
+      </div>
+
+      <details class="rights">
+        <summary>Notice of Consumer Rights (Maryland Health Club Services Law)</summary>
+        <ol>
+          <li>Our business's registration number with the State's Consumer Protection Division is 6120.</li>
+          <li>We are not required to carry a performance bond under Maryland Health Club Services law, because we do not accept more than three months' payment in advance or charge initiation fees over $200.</li>
+          <li>If our facility is closed for a month or more, you're entitled to your choice of a prorated refund.</li>
+          <li>You have the right to cancel this agreement within 3 business days of receiving a copy of it. Cancellation must be in writing &mdash; by email, in person, or by certified/registered mail &mdash; and entitles you to a full refund of all monies paid.</li>
+          <li>If you become disabled or unable to exercise for health reasons confirmed in writing by a physician, you may pause your payment indefinitely or cancel and receive a prorated refund of any unused membership fee (monthly members). Because we're exempt from the bonding requirement, we cannot collect payments during a disability extension beyond three months' advance payment.</li>
+        </ol>
+      </details>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">From the Neighborhood</p>
+        <h2>5.0 stars on Google, from people down the street.</h2>
+      </div>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"A great place and great energy!"</p>
+          <footer>Google Review</footer>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"This is a very supportive group of members and instructors."</p>
+          <footer>Google Review</footer>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="mile"><span class="mile-num">MILE 05</span><span class="mile-line" style="background:rgba(244,239,223,0.16);"></span></div>
+      <div class="contact-grid">
+        <div>
+          <p class="eyebrow">Come Find Us</p>
+          <h2 style="margin-top:14px; color:var(--paper); font-size:clamp(1.8rem,3vw,2.4rem);">Trying to find your way back to health and fun?</h2>
+          <ul class="contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <div><span class="label">Address</span>11601 Nebel Street, Rockville, MD 20852 &mdash; back of Flint Hill Plaza, last unit at the end of the driveway.</div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+              <div><span class="label">Phone / Text</span><a href="tel:2402937304">240-293-7304</a></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+              <div><span class="label">Email</span><a href="mailto:helena@getfitbymanyroads.com">helena@getfitbymanyroads.com</a></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              <div><span class="label">Facebook</span><a href="https://www.facebook.com/profile.php?id=61589667671465" target="_blank" rel="noopener">Get Fit by Many Roads</a></div>
+            </li>
+          </ul>
+        </div>
+        <figure class="contact-photo">
+          <img src="https://images.squarespace-cdn.com/content/v1/6977cff1fb5809769ff14dd8/15830fc0-5f01-41c4-879e-bd1dd4c60d17/Flint+Hill+building.jpeg" alt="Flint Hill Plaza building exterior in Rockville, MD">
+          <p>Flint Hill Plaza &mdash; look for the driveway on the right and follow it to the end.</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot-row">
+    <span>&copy; <span id="yr"></span> Get Fit by Many Roads &middot; Many Roads Community, LLC</span>
+    <span><a href="tel:2402937304">240-293-7304</a> &middot; <a href="mailto:helena@getfitbymanyroads.com">helena@getfitbymanyroads.com</a> &middot; Rockville, MD</span>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
